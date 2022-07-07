@@ -8,28 +8,28 @@
     "rich-text"
   ],
   "license": "MIT",
-  "version": "0.3.4",
+  "version": "0.3.7",
   "dependencies": {
-    "@lexical/clipboard": "0.3.4",
-    "@lexical/code": "0.3.4",
-    "@lexical/dragon": "0.3.4",
-    "@lexical/hashtag": "0.3.4",
-    "@lexical/history": "0.3.4",
-    "@lexical/link": "0.3.4",
-    "@lexical/list": "0.3.4",
-    "@lexical/mark": "0.3.4",
-    "@lexical/markdown": "0.3.4",
-    "@lexical/overflow": "0.3.4",
-    "@lexical/plain-text": "0.3.4",
-    "@lexical/rich-text": "0.3.4",
-    "@lexical/selection": "0.3.4",
-    "@lexical/table": "0.3.4",
-    "@lexical/text": "0.3.4",
-    "@lexical/utils": "0.3.4",
-    "@lexical/yjs": "0.3.4"
+    "@lexical/clipboard": "0.3.7",
+    "@lexical/code": "0.3.7",
+    "@lexical/dragon": "0.3.7",
+    "@lexical/hashtag": "0.3.7",
+    "@lexical/history": "0.3.7",
+    "@lexical/link": "0.3.7",
+    "@lexical/list": "0.3.7",
+    "@lexical/mark": "0.3.7",
+    "@lexical/markdown": "0.3.7",
+    "@lexical/overflow": "0.3.7",
+    "@lexical/plain-text": "0.3.7",
+    "@lexical/rich-text": "0.3.7",
+    "@lexical/selection": "0.3.7",
+    "@lexical/table": "0.3.7",
+    "@lexical/text": "0.3.7",
+    "@lexical/utils": "0.3.7",
+    "@lexical/yjs": "0.3.7"
   },
   "peerDependencies": {
-    "lexical": "0.3.4",
+    "lexical": "0.3.7",
     "react": ">=17.x",
     "react-dom": ">=17.x"
   },
@@ -37,8 +37,5 @@
     "type": "git",
     "url": "https://github.com/facebook/lexical",
     "directory": "packages/lexical-react"
-  },
-  "devDependencies": {
-    "utility-types": "^3.10.0"
   }
 }

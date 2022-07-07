@@ -8,14 +8,17 @@
     "html"
   ],
   "license": "MIT",
-  "version": "0.3.4",
+  "version": "0.3.7",
   "main": "LexicalHtml.js",
   "peerDependencies": {
-    "lexical": "0.3.4"
+    "lexical": "0.3.7"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/facebook/lexical",
     "directory": "packages/lexical-html"
+  },
+  "dependencies": {
+    "@lexical/selection": "0.3.7"
   }
 }

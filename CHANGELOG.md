@@ -1,3 +1,93 @@
+## 0.3.7 (July 6, 2022)
+
+Lots of bug fixes and polish. Notably, the full text of minifed Lexical error codes can now be accessed via the [Lexical website](https://lexical.dev/docs/error?code=2).
+
+- Update Browser Extension's Vite Config (#2540) Will
+- fix: import color and vertical align info from html string (#2571) Adithya Vardhan
+- Update PollNode.css (#2602) VelociRaptor
+- Update package names (#2599) Acy Watson
+- Ensure to call existing listeners only (not newly added ones) (#2573) Maksim Horbachevsky
+- Added dragend to list of rootElementEvents (#2598) stuartrobinson3007
+- Reverse MarkdownExport loop order to take TextMatchTransformers into account first (#2582) Lukas
+- Fetch Lexical State Tree in DevTools App (#2510) Will
+- chore: use keyboard shortcuts (#2580) Adithya Vardhan
+- fix prettier Gerard Rovira
+- Replace background images with pseudo classes to display checkboxes in playground (#2567) VelociRaptor
+- Customize default focus position (#2591) Gerard Rovira
+- Add missing dependencies (#2585) John Flockton
+- Website error codes - lexical.dev/error/<code> (#2574) Gerard Rovira
+- Use Vite server for E2E tests in CI (Fix windows CI failures) (#2584) Acy Watson
+- feat(lexical-playground): copy button for @lexical/code (#2396) 子瞻 Luci
+- fix: commenting issue after ts migration (#2558) Adithya Vardhan
+- npm run changelog (#2561) Gerard Rovira
+- fix: typo edtior to editor (#2560) Florent DUVEAU
+
+## 0.3.6 (June 29, 2022)
+
+lexical & @lexical/ packages:
+- fix(lexical): Text with underline format is stripped out on paste (#2555) 子瞻 Luci
+- Trigger readonly listener only when value has changed (#2550) Maksim Horbachevsky
+- fix(lexical): deselecting a decorator node by clicking (#2554) 子瞻 Luci
+- Remove wordwrap for tree view (#2551) John Flockton
+- add docs for headless package (#2539) Acy Watson
+- Normalize list children (#2509) Acy Watson
+- Add ability to set format and detail by string type (#2547) John Flockton
+- Pasting multi-line plain text into rich-text mode produces separate paragraphs (#2507) Maksim Horbachevsky
+- Revert "Revert "fix: insert text after delete next to inline node (#2530)" (#2544)" (#2549) Gerard Rovira
+- Revert "fix: insert text after delete next to inline node (#2530)" (#2544) Gerard Rovira
+- fix: insert text after delete next to inline node (#2530) Patrik Åkerstrand
+- Fix IME bug in `lexical-history` (#2501) John Flockton
+- Export Klass from Lexical root (#2533) John Flockton
+- Hide placeholder when readonly (#2511) Gerard Rovira
+- remove utility types from all packages (#2529) John Flockton
+- Improve markdown newline export/import (#2519) Maksim Horbachevsky
+- Revisit formatText node selection (#2524) Gerard Rovira
+- Fix $generateHtmlFromNodes to output whole editor contents if selection is null (#2504) yicrotkd
+- Remove unnecessary comments (#2505) John Flockton
+- fix(lexical): "selection.format" is not set correctly (#2502) 子瞻 Luci
+- Fixed getStyleObjectFromRawCSS function to work with unformatted css (#2515) Karam Qaoud
+- Fix image copy+paste (#2517) Dominic Gannaway
+- Migrate to TS strict mode 6/n  (#2496) John Flockton
+- fix(lexical): caret at wrong place when paste (#2465) 子瞻 Luci
+- Fix infinite recursion in insertText in RangeSelection (#2490) Patrik Åkerstrand
+- Update error message and docs (#2492) John Flockton
+- Migrate to TS strict mode 5/n (#2488) John Flockton
+- Fix composition bugs affecting intern (#2487) John Flockton
+- Fix FF issue with composition (#2486) Dominic Gannaway
+- Migrate to TS strict mode 3/n  (#2482) John Flockton
+- Fix Flow rewrite imports script (#2477) John Flockton
+- Migrate to TS strict mode 2/n (#2469) John Flockton
+- Inserting inline elements (#2474) Maksim Horbachevsky
+- Fix component/plugin names in get started section (#2472) Aleš Menzel
+- Revert "add e2e tests for MaxLength plugin (#2466)" (#2467) Gerard Rovira
+- add e2e tests for MaxLength plugin (#2466) Adithya Vardhan
+- Fix can format backwards when at first text node boundary (#2445) Gerard Rovira
+- Fix button--outline hover color dark mode (#2462) M. Zakiyuddin Munziri
+- Migrate to TS strict mode 1/n (#2458) John Flockton
+- renamed character styles popup plugin (#2456) Strek
+
+Playground:
+- Flower size (#2527) Gerard Rovira
+- fix(lexical-playground): Resizing is not consistent on mobile (#2518) 子瞻 Luci
+- fix(lexical-playground): Floating toolbar displayed on composition (#2506) 子瞻 Luci
+- chore(lexical-playground): remove redundant code (#2497) 子瞻 Luci
+
+Docs:
+- add docs for headless package (#2539) Acy Watson
+- tiny typo fix (#2514) Hadi El-Yakhni
+
+Infra:
+- Update e2e test docs and run-all script (#2522) yicrotkd
+- Fix Windows CI Runs (#2513) Acy Watson
+- Deploy Lexical prod build to Vercel (#2476) Gerard Rovira
+- CI check against prod bundle (#2460) Gerard Rovira
+- shared PKG to cleanup (#2463) Gerard Rovira
+
+## 0.3.5 (June 16, 2022)
+
+- Fix bad warnOnlyOnce minification (#2448)
+- add missing flow type (#2447)
+
 ## 0.3.4 (June 16, 2022)
 - Customizable DecoratorBlockNode via theme (#2387)
 - initializeEditorState on LexicalComposer (#2425)
@@ -29,7 +119,7 @@ Playground
 
 ## 0.3.2 (June 6, 2022)
 
-- added typing for ListItemNode.setChecked, export ListNodeTagType (#2335) 
+- added typing for ListItemNode.setChecked, export ListNodeTagType (#2335)
 - Fix copy + paste in plain text (#2342)
 - Remove process.env (#2338)
 
@@ -129,13 +219,13 @@ Playground
 - Add TextMarks to TextNode (#1912)
 - Fix various collab bugs with lists (#1984)
 - Fix cached getTextContent() to reflect new lines (#1993)
-- Fix equation node handling on Android (#1968) 
+- Fix equation node handling on Android (#1968)
 - Fix formatting on embeds (#1963)
 - Improve multi element indentation - added ElementNode.canIndent (#1982)
 - Fix bugs around pressing the enter key in Safari (#1943)
 - Fix delete empty lines on tables (#1905)
 - Fix copy-paste format loss (#1913)
-- Fix memory leak with EditorContext (#1767) 
+- Fix memory leak with EditorContext (#1767)
 - Fix various selection issues on node boundaries (#1917)
 - Fix some .js.flow and d.ts types
 

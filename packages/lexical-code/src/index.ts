@@ -105,7 +105,11 @@ export const getCodeLanguages = (): Array<string> =>
 export class CodeHighlightNode extends TextNode {
   __highlightType: string | null | undefined;
 
-  constructor(text: string, highlightType?: string, key?: NodeKey) {
+  constructor(
+    text: string,
+    highlightType?: string | null | undefined,
+    key?: NodeKey,
+  ) {
     super(text, key);
     this.__highlightType = highlightType;
   }
@@ -193,8 +197,8 @@ export class CodeHighlightNode extends TextNode {
 
 function getHighlightThemeClass(
   theme: EditorThemeClasses,
-  highlightType: string | undefined,
-): string | undefined {
+  highlightType: string | null | undefined,
+): string | null | undefined {
   return (
     highlightType &&
     theme &&
@@ -205,7 +209,7 @@ function getHighlightThemeClass(
 
 export function $createCodeHighlightNode(
   text: string,
-  highlightType?: string,
+  highlightType?: string | null | undefined,
 ): CodeHighlightNode {
   return new CodeHighlightNode(text, highlightType);
 }
@@ -261,10 +265,20 @@ export class CodeNode extends ElementNode {
 
   static importDOM(): DOMConversionMap | null {
     return {
-      code: (node: Node) => ({
-        conversion: convertPreElement,
-        priority: 0,
-      }),
+      // Typically <pre> is used for code blocks, and <code> for inline code styles
+      // but if it's a multi line <code> we'll create a block. Pass through to
+      // inline format handled by TextNode otherwise
+      code: (node: Node) => {
+        const isMultiLine =
+          node.textContent != null && /\r?\n/.test(node.textContent);
+
+        return isMultiLine
+          ? {
+              conversion: convertPreElement,
+              priority: 1,
+            }
+          : null;
+      },
       div: (node: Node) => ({
         conversion: convertDivElement,
         priority: 1,
@@ -417,7 +431,9 @@ export class CodeNode extends ElementNode {
   }
 }
 
-export function $createCodeNode(language?: string): CodeNode {
+export function $createCodeNode(
+  language?: string | null | undefined,
+): CodeNode {
   return new CodeNode(language);
 }
 
@@ -1099,6 +1115,8 @@ function handleMoveTo(
 
   event.preventDefault();
   event.stopPropagation();
+
+  return true;
 }
 
 export function registerCodeHighlighting(editor: LexicalEditor): () => void {

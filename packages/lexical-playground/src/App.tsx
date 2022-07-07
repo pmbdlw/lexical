@@ -20,6 +20,7 @@ import {SharedHistoryContext} from './context/SharedHistoryContext';
 import Editor from './Editor';
 import logo from './images/logo.svg';
 import PlaygroundNodes from './nodes/PlaygroundNodes';
+import PasteLogPlugin from './plugins/PasteLogPlugin';
 import TestRecorderPlugin from './plugins/TestRecorderPlugin';
 import TypingPerfPlugin from './plugins/TypingPerfPlugin';
 import Settings from './Settings';
@@ -122,7 +123,7 @@ function App(): JSX.Element {
       : prepopulatedRichText,
     namespace: 'Playground',
     nodes: [...PlaygroundNodes],
-    onError: (error) => {
+    onError: (error: Error) => {
       throw error;
     },
     theme: PlaygroundEditorTheme,
@@ -141,8 +142,9 @@ function App(): JSX.Element {
             <Editor />
           </div>
           <Settings />
-          {isDevPlayground && <TestRecorderPlugin />}
-          {measureTypingPerf && <TypingPerfPlugin />}
+          {isDevPlayground ? <PasteLogPlugin /> : null}
+          {isDevPlayground ? <TestRecorderPlugin /> : null}
+          {measureTypingPerf ? <TypingPerfPlugin /> : null}
         </SharedAutocompleteContext>
       </SharedHistoryContext>
     </LexicalComposer>
